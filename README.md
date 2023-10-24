@@ -12,17 +12,29 @@
 ---
 
 <details>
-<summary>Git usage</summary>
+<summary><b>Git usage</b></summary>
+
+<details>
+<summary>Сатус проекта</summary>
 
 > Статус проекта (смотрим на модифицированные файлы):
 > ```bash
 > git status
 > ```
 
+</details>
+<details>
+<summary>Получение обновлений</summary>
+
 > Получение новых файлов с сервера:
 > ```bash
 > git pull
 > ```
+
+</details>
+
+<details>
+<summary>Отправка обновлений</summary>
 
 > Добавление новых файлов:
 > ```bash
@@ -34,4 +46,5 @@
 > git push
 > ```
 
+</details>
 </details>
