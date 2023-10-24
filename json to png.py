@@ -46,6 +46,6 @@ for imgId in imgs:
             if cv2.pointPolygonTest(contours, (i, j), False) > 0:
                 maskImage[j,i] = 1
 
-    savePath = MASK_FOLOER + filename
+    savePath = MASK_FOLOER + filename.replace('.jpg', '.png')
          # Сохранить маску
     cv2.imwrite(savePath, maskImage)
