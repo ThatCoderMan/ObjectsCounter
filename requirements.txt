@@ -1,0 +1,6 @@
+tensorflow_addons
+numpy~=1.26.1
+matplotlib
+tensorflow
+scikit-image~=0.22.0
+opencv-python

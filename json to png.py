@@ -4,9 +4,9 @@ import numpy as np
 import skimage.draw
 import cv2
 
-IMAGE_FOLDER = "./train/"
-MASK_FOLOER = "./mask/"
-PATH_ANNOTATION_JSON = 'Json'
+IMAGE_FOLDER = "./data/dataset/images/"
+MASK_FOLOER = "./data/dataset/masks/"
+PATH_ANNOTATION_JSON = './Json/1.json'
 
 # Загрузить VIA экспортированный файл JSON
 annotations = json.load(open(PATH_ANNOTATION_JSON, 'r'))
@@ -23,12 +23,14 @@ for imgId in imgs:
 
          # Путь к изображению
     image_path = os.path.join(IMAGE_FOLDER, filename)
+
          # Прочитайте картинку, целью которой является получение информации о ширине и высоте
     image = cv2.imread(image_path)  # image = skimage.io.imread(image_path)
     height, width = image.shape[:2]
 
          # Создать пустую маску
-    maskImage = np.zeros((height,width), dtype=np.uint8)
+    maskImage = np.zeros((height, width), dtype=np.uint8)
+    print(polygons)
     countOfPoints = len(polygons['all_points_x'])
     points = [None] * countOfPoints
     for i in range(countOfPoints):
