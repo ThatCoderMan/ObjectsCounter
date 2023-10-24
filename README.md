@@ -52,4 +52,19 @@
 > ```
 
 </details>
+
+
+<details>
+<summary>универсальная отправка</summary>
+
+> Добавление новых файлов:
+> ```bash
+> git add .
+> git commit -m "edit"
+> git push
+> git status
+> ```
+
+</details>
+
 </details>
