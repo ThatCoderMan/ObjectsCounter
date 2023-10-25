@@ -35,7 +35,7 @@ class HandlerBase(ABC):
         for key, value in kwargs.items():
             setattr(self, key, value)
 
-    def process_video(self, framerate:int=30):
+    def process_video(self, framerate: int = 30):
         self.prepare_model()
         print('start processing video with')
         frame_cnt = 0
@@ -84,10 +84,14 @@ class HandlerBase(ABC):
         return annotated_frame
 
     def counter_box(self, frame: cv2.typing.MatLike, frame_hay_cnt: int) -> cv2.typing.MatLike:
+        cv2.rectangle(frame, (10, 10), (235, 80), (100, 100, 100, 100), -1)
         font = cv2.FONT_HERSHEY_SIMPLEX
-        text = f"Objects found: {len(self.counter)}"
+        text = f'Total: {len(self.counter)}'
         text_x, text_y = 20, 40
-        text_size = 0.7
+        text_size = 1
+        cv2.putText(frame, text, (text_x, text_y), font, text_size, (255, 255, 255))
+        text = f'Current: {frame_hay_cnt}'
+        text_y = 70
         cv2.putText(frame, text, (text_x, text_y), font, text_size, (255, 255, 255))
         return frame
 

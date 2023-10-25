@@ -9,7 +9,8 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 
 if __name__ == '__main__':
-    tracker = Tracker(show=True, video_path='data/videos/video.mp4', conf=0.1, imgsz=Size.sd)
+    tracker = Tracker(show=True, video_path='data/videos/hay_v1_fhd.mp4', conf=0.1, imgsz=Size.s1K)
     tracker.process_video()
-    # predictor = Predictor(show=True, conf=0.1, imgsz=(3840, 2144))
+    tracker.save_video()
+    # predictor = Predictor(show=True, video_path='data/videos/hay_v1_fhd.mp4', conf=0.1, imgsz=Size.s1K)
     # predictor.process_video()
