@@ -1,13 +1,11 @@
-from collections import defaultdict
 import cv2
-import numpy as np
 from ultralytics import YOLO
 import config
 
 # Load the YOLOv8 model
-model = YOLO('models/best.pt')
+model = YOLO('../models/best.pt')
 # Open the video file
-video_path = "data/videos/Seno1.mp4"
+video_path = "../data/videos/Seno1.mp4"
 cap = cv2.VideoCapture(video_path)
 
 # Store the track history
