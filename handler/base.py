@@ -36,6 +36,7 @@ class HandlerBase(ABC):
             success, frame = self.cap.read()
             if success:
                 annotated_frame = self.annotate_frame(frame)
+                annotated_frame = self.counter_box(annotated_frame)
                 print('Hay counted:', len(self.counter))
                 if self.show:
                     cv2.imshow("YOLOv8 Tracking", annotated_frame)
@@ -73,3 +74,7 @@ class HandlerBase(ABC):
                 2
             )
         return annotated_frame
+
+    def counter_box(self, frame: cv2.typing.MatLike) -> cv2.typing.MatLike:
+        ...
+        return frame
