@@ -1,4 +1,5 @@
 import glob
+import logging
 from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import Union
@@ -7,7 +8,6 @@ import cv2
 import ultralytics
 from tqdm import tqdm
 from ultralytics import YOLO
-import logging
 
 logging.disable(logging.CRITICAL)
 logger = logging.getLogger('ultralytics')
@@ -15,15 +15,14 @@ logger.setLevel(logging.CRITICAL)
 
 
 class HandlerBase(ABC):
-
     def __init__(
-            self,
-            model: Union[str, Path] = 'models/best.pt',
-            video_path: Union[str, Path] = 'data/videos/hay_v1_fhd.mp4',
-            save_path: Union[str, Path] = 'data/results/',
-            show: bool = False,
-            hide_labels: bool = True,
-            **kwargs
+        self,
+        model: Union[str, Path] = 'models/best.pt',
+        video_path: Union[str, Path] = 'data/videos/hay_v1_fhd.mp4',
+        save_path: Union[str, Path] = 'data/results/',
+        show: bool = False,
+        hide_labels: bool = True,
+        **kwargs,
     ):
         self.model = YOLO(model)
         self.video_path = video_path
@@ -39,7 +38,7 @@ class HandlerBase(ABC):
         self.prepare_model()
         print('start processing video with')
         frame_cnt = 0
-        with tqdm(total=int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT))//max(skip_frames, 1)) as pbar:
+        with tqdm(total=int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT)) // max(skip_frames, 1)) as pbar:
             while self.cap.isOpened():
                 success, frame = self.cap.read()
                 if skip_frames and frame_cnt % skip_frames != 0:
@@ -49,10 +48,10 @@ class HandlerBase(ABC):
                     annotated_frame, frame_hay_cnt = self.annotate_frame(frame)
                     annotated_frame = self.counter_box(annotated_frame, frame_hay_cnt)
                     if self.show:
-                        cv2.imshow("YOLOv8 Tracking", annotated_frame)
+                        cv2.imshow('YOLOv8 Tracking', annotated_frame)
                     else:
                         cv2.imwrite(self.save_path + f'frame_{frame_cnt:0>4}.jpg', annotated_frame)
-                    if cv2.waitKey(1) & 0xFF == ord("q"):
+                    if cv2.waitKey(1) & 0xFF == ord('q'):
                         break
                     frame_cnt += 1
                     pbar.update(1)
@@ -61,7 +60,7 @@ class HandlerBase(ABC):
         self.cap.release()
         if self.show:
             cv2.destroyAllWindows()
-        print("Total objects count:", len(self.counter))
+        print('Total objects count:', len(self.counter))
         if not self.show:
             self.save_video(framerate)
 
@@ -77,13 +76,7 @@ class HandlerBase(ABC):
         annotated_frame = frame.copy()
         for box in boxes:
             x, y, w, h = box
-            cv2.rectangle(
-                annotated_frame,
-                (int(x - w / 2), int(y - h / 2)),
-                (int(x + w / 2), int(y + h / 2)),
-                (0, 255, 0),
-                2
-            )
+            cv2.rectangle(annotated_frame, (int(x - w / 2), int(y - h / 2)), (int(x + w / 2), int(y + h / 2)), (0, 255, 0), 2)
         return annotated_frame
 
     def counter_box(self, frame: cv2.typing.MatLike, frame_hay_cnt: int) -> cv2.typing.MatLike:

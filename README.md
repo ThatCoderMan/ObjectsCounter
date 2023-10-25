@@ -43,7 +43,7 @@
 
 > создать комить:
 > ```bash
-> git commit -m "edit"
+> git commit -m 'edit'
 > ```
 
 > Отправка файлов на сервер:
@@ -60,7 +60,7 @@
 > Добавление новых файлов:
 > ```bash
 > git add .
-> git commit -m "edit"
+> git commit -m 'edit'
 > git push
 > git status
 > ```

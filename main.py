@@ -1,11 +1,10 @@
 import os
 
-from handler.track import Tracker
-from handler.predict import Predictor
 from handler.constants import Size
+from handler.predict import Predictor
+from handler.track import Tracker
 
-
-os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 
 
 if __name__ == '__main__':

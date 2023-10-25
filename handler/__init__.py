@@ -1,3 +1,3 @@
-from .track import Tracker
-from .predict import Predictor
 from .constants import Size
+from .predict import Predictor
+from .track import Tracker
