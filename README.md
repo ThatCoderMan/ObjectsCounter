@@ -4,8 +4,8 @@
 <summary>Project stack</summary>
 
 - Python 3.11
-- TenserFlow
-- Keras
+- Ultralytics
+- Roboflow
 
 </details>
 
