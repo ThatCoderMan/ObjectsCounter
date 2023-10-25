@@ -9,4 +9,3 @@ if __name__ == '__main__':
     tracker.save_video()
     # predictor = Predictor(show=True, conf=0.1, imgsz=(3840, 2144))
     # predictor.process_video()
-
