@@ -52,7 +52,7 @@ class HandlerBase(ABC):
                     if cv2.waitKey(1) & 0xFF == ord("q"):
                         break
                     frame_cnt += 1
-                    pbar.update(frame_cnt)
+                    pbar.update(1)
                 else:
                     break
         self.cap.release()
