@@ -35,13 +35,16 @@ class HandlerBase(ABC):
         for key, value in kwargs.items():
             setattr(self, key, value)
 
-    def process_video(self, framerate: int = 30):
+    def process_video(self, framerate: int = 30, skip_frames: int = 0):
         self.prepare_model()
         print('start processing video with')
         frame_cnt = 0
-        with tqdm(total=int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT))) as pbar:
+        with tqdm(total=int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT))//max(skip_frames, 1)) as pbar:
             while self.cap.isOpened():
                 success, frame = self.cap.read()
+                if skip_frames and frame_cnt % skip_frames != 0:
+                    frame_cnt += 1
+                    continue
                 if success:
                     annotated_frame, frame_hay_cnt = self.annotate_frame(frame)
                     annotated_frame = self.counter_box(annotated_frame, frame_hay_cnt)
@@ -96,11 +99,13 @@ class HandlerBase(ABC):
         return frame
 
     def save_video(self, framerate: int = 30):
+
         images = sorted(glob.glob(self.save_path + '/*.jpg'))
         if images:
             print('Saving video')
             height, width, _ = cv2.imread(images[0]).shape
-            out = cv2.VideoWriter('data/result.avi', cv2.VideoWriter_fourcc(*'DIVX'), framerate, (width, height))
+            fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+            out = cv2.VideoWriter('data/result.mp4', fourcc, framerate, (width, height))
             for filename in tqdm(images):
                 img = cv2.imread(filename)
                 out.write(img)
