@@ -1,1 +1,2 @@
 CONF = 0.15
+TEXT_SIZE = 

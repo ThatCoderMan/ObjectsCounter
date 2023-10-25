@@ -76,5 +76,9 @@ class HandlerBase(ABC):
         return annotated_frame
 
     def counter_box(self, frame: cv2.typing.MatLike) -> cv2.typing.MatLike:
-        ...
+        font = cv2.FONT_HERSHEY_SIMPLEX
+        text = f"Objects found: {len(self.counter)}"
+        text_x, text_y = 20, 40
+        text_size = 0.7
+        cv2.putText(frame, text, (text_x, text_y), font, text_size, (255, 255, 255))
         return frame
