@@ -1,4 +1,4 @@
 glob2==0.7
-opencv-python==4.5.3
+opencv-python==4.5.3.56
 tqdm==4.62.3
 ultralytics==0.3.9
