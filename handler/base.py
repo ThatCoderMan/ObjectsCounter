@@ -5,14 +5,17 @@ import ultralytics
 from ultralytics import YOLO
 from pathlib import Path
 from typing import Union
-
+from tqdm import tqdm
+import cv2
+import numpy as np
+import glob
 
 class HandlerBase(ABC):
 
     def __init__(
             self,
             model: Union[str, Path] = 'models/best.pt',
-            video_path: Union[str, Path] = 'data/videos/Seno1.mp4',
+            video_path: Union[str, Path] = 'data/videos/hay_v1_fhd.mp4',
             save_path: Union[str, Path] = 'data/results/',
             show: bool = False,
             hide_labels: bool = True,
@@ -78,3 +81,16 @@ class HandlerBase(ABC):
     def counter_box(self, frame: cv2.typing.MatLike) -> cv2.typing.MatLike:
         ...
         return frame
+
+    def save_video(self, framerate: int = 30):
+        images = sorted(glob.glob(self.save_path+'/*.jpg'))
+        if images:
+            print('Saving video')
+            height, width, _ = cv2.imread(images[0]).shape
+            out = cv2.VideoWriter('data/result.avi', cv2.VideoWriter_fourcc(*'DIVX'), framerate, (width, height))
+            for filename in tqdm(images):
+                img = cv2.imread(filename)
+                out.write(img)
+            out.release()
+            print('Video saved')
+        print('No images to save video')
