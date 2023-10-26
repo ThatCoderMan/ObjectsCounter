@@ -81,7 +81,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-### Команда разработки:
+### Команда разработки
 -   [ThatCoderMan (Артемий)](https://github.com/ThatCoderMan)
 -   [progmat64 (Александр)](https://github.com/progmat64)
 -   [Bully-Boy (Роман)](https://github.com/Bully-Boy)
