@@ -1,7 +1,6 @@
+[![train model](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ThatCoderMan/Hay_test_task/blob/main/notebooks/yolov8.ipynb) Train model
 
-Train model [![train model](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ThatCoderMan/Hay_test_task/blob/main/notebooks/yolov8.ipynb)
-
-Detect [![detect](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ThatCoderMan/Hay_test_task/blob/main/notebooks/HaystackDetector.ipynb)
+[![detect](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ThatCoderMan/Hay_test_task/blob/main/notebooks/HaystackDetector.ipynb) Detect
 
 # Hay test task
 
@@ -82,9 +81,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-
-
-Команда разработки:
-- [ThatCoderMan (Артемий)](https://github.com/ThatCoderMan)
-- [progmat64 (Александр)](https://github.com/progmat64)
-- [Bully-Boy (Роман)](https://github.com/Bully-Boy)
+### Команда разработки:
+-   [ThatCoderMan (Артемий)](https://github.com/ThatCoderMan)
+-   [progmat64 (Александр)](https://github.com/progmat64)
+-   [Bully-Boy (Роман)](https://github.com/Bully-Boy)
