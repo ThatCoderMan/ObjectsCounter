@@ -1,6 +1,7 @@
 
-[![train model](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ThatCoderMan/Hay_test_task/blob/main/notebooks/yolov8.ipynb)
-[![detect](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ThatCoderMan/Hay_test_task/blob/main/notebooks/HaystackDetector.ipynb)
+Train model [![train model](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ThatCoderMan/Hay_test_task/blob/main/notebooks/yolov8.ipynb)
+
+Detect [![detect](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ThatCoderMan/Hay_test_task/blob/main/notebooks/HaystackDetector.ipynb)
 
 # Hay test task
 
@@ -68,15 +69,10 @@
 git clone git@github.com:ThatCoderMan/Hay_test_task.git
 ```
 Установите и активируйте виртуальное окружение:
-- *для MacOS:*
-    ```bash
-    python3 -m venv venv
-    ```
-- *для Windows:*
-    ```bash
-    python -m venv venv
-    source venv/Scripts/activate
-    ```
+```bash
+python -m venv venv
+source venv/Scripts/activate
+```
 Установите зависимости из файла requirements.txt:
 ```bash
 pip install -r requirements.txt
