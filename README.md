@@ -11,38 +11,6 @@
 - Roboflow
 </details>
 
-Команда разработки:
-- [ThatCoderMan (Артемий)](https://github.com/ThatCoderMan)
-- [progmat64 (Александр)](https://github.com/progmat64)
-- [Bully-Boy (Роман)](https://github.com/Bully-Boy)
-
-### Описание
-Обработка видео с использованием модели обнаружения объектов YOLOv8.
-
-### Инструкция по запуску:
-Клонируйте репозиторий:
-```bash
-git clone git@github.com:ThatCoderMan/Hay_test_task.git
-```
-Установите и активируйте виртуальное окружение:
-- *для MacOS:*
-    ```bash
-    python3 -m venv venv
-    ```
-- *для Windows:*
-    ```bash
-    python -m venv venv
-    source venv/Scripts/activate
-    ```
-Установите зависимости из файла requirements.txt:
-```bash
-pip install -r requirements.txt
-```
-Выполните команду для запуска:
-```bash
-python main.py
-```
-
 <details>
 <summary><b>Git usage</b></summary>
 
@@ -90,3 +58,37 @@ python main.py
 </details>
 
 </details>
+
+### Описание
+Обработка видео с использованием модели обнаружения объектов YOLOv8.
+
+### Инструкция по запуску
+Клонируйте репозиторий:
+```bash
+git clone git@github.com:ThatCoderMan/Hay_test_task.git
+```
+Установите и активируйте виртуальное окружение:
+- *для MacOS:*
+    ```bash
+    python3 -m venv venv
+    ```
+- *для Windows:*
+    ```bash
+    python -m venv venv
+    source venv/Scripts/activate
+    ```
+Установите зависимости из файла requirements.txt:
+```bash
+pip install -r requirements.txt
+```
+Выполните команду для запуска:
+```bash
+python main.py
+```
+
+
+
+Команда разработки:
+- [ThatCoderMan (Артемий)](https://github.com/ThatCoderMan)
+- [progmat64 (Александр)](https://github.com/progmat64)
+- [Bully-Boy (Роман)](https://github.com/Bully-Boy)
