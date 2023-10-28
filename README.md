@@ -56,7 +56,6 @@
 > git status
 > ```
 </details>
-
 </details>
 
 ### Описание
