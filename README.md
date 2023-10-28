@@ -1,6 +1,8 @@
-[![train model](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ThatCoderMan/Hay_test_task/blob/main/notebooks/yolov8.ipynb) Train model
+> ### Train Model
+> [![train model](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ThatCoderMan/Hay_test_task/blob/main/notebooks/yolov8.ipynb) 
 
-[![detect](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ThatCoderMan/Hay_test_task/blob/main/notebooks/HaystackDetector.ipynb) Detect
+> ### Detect Images
+> [![detect](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ThatCoderMan/Hay_test_task/blob/main/notebooks/HaystackDetector.ipynb)
 
 # Hay test task
 
