@@ -5,7 +5,6 @@
 > [![detect](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ThatCoderMan/Hay_test_task/blob/main/notebooks/HaystackDetector.ipynb)
 
 # Hay test task
-
 <details>
 <summary>Project stack</summary>
 - Python 3.11
@@ -58,7 +57,6 @@
 > git status
 > ```
 </details>
-
 </details>
 
 ### Описание
