@@ -14,7 +14,7 @@ def main():
     attrs = {key: value for key, value in args.__dict__.items() if value is not None}
     attrs['imgsz'] = SIZE.get(args.__dict__.get('imgsz'), SIZE['s1K'])
 
-    detector = Tracker(**attrs) if args.mode == 'tacking' else Predictor(**attrs)
+    detector = Tracker(**attrs) if args.mode == 'tracking' else Predictor(**attrs)
 
     detector.process_video(**attrs)
 

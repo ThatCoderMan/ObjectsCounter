@@ -24,7 +24,7 @@ class HandlerBase(ABC):
     def __init__(
             self,
             model: Union[str, Path] = 'models/best.pt',
-            video: Union[str, Path] = 'data/videos/hay_v1_fhd.mp4',
+            video: Union[str, Path] = 'data/videos/SAR.mp4',
             save: Union[str, Path] = 'data/result.mp4',
             show: bool = False,
             hide_labels: bool = True,
@@ -64,8 +64,8 @@ class HandlerBase(ABC):
                     frame_cnt += 1
                     continue
                 if success:
-                    annotated_frame, frame_hay_cnt = self.annotate_frame(frame)
-                    annotated_frame = self.counter_box(annotated_frame, frame_hay_cnt)
+                    annotated_frame, frame_obj_cnt = self.annotate_frame(frame)
+                    annotated_frame = self.counter_box(annotated_frame, frame_obj_cnt)
                     if self.debug:
                         annotated_frame = self.info_box(annotated_frame)
                     if self.show:
@@ -107,14 +107,14 @@ class HandlerBase(ABC):
                           (0, 255, 0), 2)
         return annotated_frame
 
-    def counter_box(self, frame: cv2.typing.MatLike, frame_hay_cnt: int) -> cv2.typing.MatLike:
+    def counter_box(self, frame: cv2.typing.MatLike, frame_obj_cnt: int) -> cv2.typing.MatLike:
         cv2.rectangle(frame, (10, 10), (235, 80), (100, 100, 100, 100), -1)
         font = cv2.FONT_HERSHEY_SIMPLEX
         text = f'Total: {len(self.counter)}'
         text_x, text_y = 20, 40
         text_size = 1
         cv2.putText(frame, text, (text_x, text_y), font, text_size, (255, 255, 255))
-        text = f'Current: {frame_hay_cnt}'
+        text = f'Current: {frame_obj_cnt}'
         text_y = 70
         cv2.putText(frame, text, (text_x, text_y), font, text_size, (255, 255, 255))
         return frame

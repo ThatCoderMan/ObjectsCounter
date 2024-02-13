@@ -5,7 +5,7 @@ from handler.constants import SIZE
 def configure_argument_parser():
     parser = argparse.ArgumentParser(description='Objects detection, tacking and counting with YOLO8 model')
 
-    parser.add_argument('mode', choices=('tacking', 'predict'), help='Choose mode of detection objects')
+    parser.add_argument('mode', choices=('tracking', 'predict'), help='Choose mode of detection objects')
 
     parser.add_argument('-m', '--model', type=str, default='models/best.pt', help='Path to the YOLOv8 model file.')
     parser.add_argument('-v', '--video', type=str, default='data/videos/SAR.mp4', help='Path to the video file for analysis.')

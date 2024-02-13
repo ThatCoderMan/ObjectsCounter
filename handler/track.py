@@ -15,11 +15,11 @@ class Tracker(HandlerBase):
             tracker='models/custom_tracker.yaml'
         )
         try:
-            tracked_hays = results[0].boxes.id.int().cpu().tolist()
-            self.counter.update(tracked_hays)
+            tracked_objects = results[0].boxes.id.int().cpu().tolist()
+            self.counter.update(tracked_objects)
             if self.hide_labels:
-                return self.custom_box(results, frame), len(tracked_hays)
-            return results[0].plot(), tracked_hays
+                return self.custom_box(results, frame), len(tracked_objects)
+            return results[0].plot(), tracked_objects
         except Exception:
             return frame, 0
 
@@ -43,3 +43,4 @@ class Tracker(HandlerBase):
                 points = np.hstack([(x_, y_) for x_, y_, _ in track]).astype(np.int32).reshape((-1, 1, 2))
                 cv2.polylines(annotated_frame, [points], isClosed=False, color=(100, 100, 100), thickness=1)
         return annotated_frame
+
