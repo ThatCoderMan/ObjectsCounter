@@ -151,3 +151,5 @@ node_modules
 .git
 /tensorflow_macos-2.14.0/
 /tensorflow_metal-1.1.0/
+data
+/models/

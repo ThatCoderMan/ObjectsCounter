@@ -1,10 +1,7 @@
 import cv2
-import torch
 from ultralytics.engine.results import Results
 import numpy as np
 from .base import HandlerBase
-
-device = 'cpu' if not torch.cuda.is_available() else '0'
 
 
 class Tracker(HandlerBase):
@@ -14,7 +11,7 @@ class Tracker(HandlerBase):
             persist=True,
             conf=getattr(self, 'conf', 0.2),
             imgsz=getattr(self, 'imgsz', 640),
-            device=device,
+            device=self.get_device(),
             tracker='models/custom_tracker.yaml'
         )
         try:
@@ -46,4 +43,3 @@ class Tracker(HandlerBase):
                 points = np.hstack([(x_, y_) for x_, y_, _ in track]).astype(np.int32).reshape((-1, 1, 2))
                 cv2.polylines(annotated_frame, [points], isClosed=False, color=(100, 100, 100), thickness=1)
         return annotated_frame
-
