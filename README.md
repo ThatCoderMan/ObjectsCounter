@@ -1,89 +1,81 @@
-> ### Train Model
-> [![train model](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ThatCoderMan/Hay_test_task/blob/main/notebooks/yolov8.ipynb) 
+| Train Model                                                                                                                                                                       | Detect Images                                                                                                                                                                          |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [![train model](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ThatCoderMan/ObjectsCounter/blob/main/notebooks/yolov8.ipynb) | [![detect](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ThatCoderMan/ObjectsCounter/blob/main/notebooks/HaystackDetector.ipynb) |
 
-> ### Detect Images
-> [![detect](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ThatCoderMan/Hay_test_task/blob/main/notebooks/HaystackDetector.ipynb)
-
-# Hay test task
+# Objects Detection
 
 <details>
 <summary>Project stack</summary>
-- Python 3.11
-- Ultralytics
-- Roboflow
+
+ - Python 3.11
+ - Ultralytics
+ - Roboflow
+ - opencv
+ - argparse
+
+</details>
+
+---
+
+## Description
+
+Object detecting, tracking and counting with YOLO 8 model.
+<h4>
+<details>
+<summary>Cars tracker example </summary>
+
+![track cars.gif](docs%2Ftrack%20car.gif)
 </details>
 
 <details>
-<summary><b>Git usage</b></summary>
+<summary>Hay counter example</summary>
 
-<details>
-<summary>Сатус проекта</summary>
-> Статус проекта (смотрим на модифицированные файлы):
-> ```bash
-> git status
-> ```
+![hay counter.gif](docs%2Fhay%20counter.gif)
 </details>
 
-<details>
-<summary>Получение обновлений</summary>
-> Получение новых файлов с сервера:
-> ```bash
-> git pull
-> ```
-</details>
 
-<details>
-<summary>Отправка обновлений</summary>
-> Добавление новых файлов:
-> ```bash
-> git add .
-> ```
-> создать комит:
-> ```bash
-> git commit -m 'edit'
-> ```
-> Отправка файлов на сервер:
-> ```bash
-> git push
-> ```
-</details>
+## Launch Instructions
 
-<details>
-<summary>универсальная отправка</summary>
-> Добавление новых файлов:
-> ```bash
-> git add .
-> git commit -m 'edit'
-> git push
-> git status
-> ```
-</details>
+Clone repository:
 
-</details>
-
-### Описание
-Обработка видео с использованием модели обнаружения объектов YOLOv8.
-
-### Инструкция по запуску
-Клонируйте репозиторий:
 ```bash
-git clone git@github.com:ThatCoderMan/Hay_test_task.git
+git clone git@github.com:ThatCoderMan/ObjectsCounter.git
 ```
-Установите и активируйте виртуальное окружение:
+
+Install and activate the virtual environment:
+
+<details>
+<summary>MacOS</summary>
+
+```bash
+source venv/bin/activate
+```
+</details>
+<details>
+<summary>Windows</summary>
+
 ```bash
 python -m venv venv
 source venv/Scripts/activate
 ```
-Установите зависимости из файла requirements.txt:
+</details>
+
+Install the dependencies from the file requirements.txt:
+
 ```bash
 pip install -r requirements.txt
 ```
-Выполните команду для запуска:
+
+Run the command to run:
+
 ```bash
 python main.py
 ```
 
-### Команда разработки
--   [ThatCoderMan (Артемий)](https://github.com/ThatCoderMan)
--   [progmat64 (Александр)](https://github.com/progmat64)
--   [Bully-Boy (Роман)](https://github.com/Bully-Boy)
+---
+
+## Developers:
+
+- [ThatCoderMan (Артемий)](https://github.com/ThatCoderMan)
+- [progmat64 (Александр)](https://github.com/progmat64)
+- [Bully-Boy (Роман)](https://github.com/Bully-Boy)
