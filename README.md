@@ -21,17 +21,6 @@
 
 Object detecting, tracking and counting with YOLO 8 model.
 <h4>
-<details>
-<summary>Cars tracker example </summary>
-
-![track cars.gif](docs%2Ftrack%20car.gif)
-</details>
-
-<details>
-<summary>Hay counter example</summary>
-
-![hay counter.gif](docs%2Fhay%20counter.gif)
-</details>
 
 
 ## Launch Instructions
